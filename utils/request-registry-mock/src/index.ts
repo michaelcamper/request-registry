@@ -213,6 +213,13 @@ export function mockEndpoint<
 	};
 	// Add the original mockFunction to find it during cleanup
 	baseMocks.set(endpoint.loader, mockResponse);
+	// Clear caches without rerendering
+	const cache =
+		'cache' in endpoint &&
+		(endpoint as EndpointGetFunction<any, any>).cache;
+	if (cache) {
+		cache.clear();
+	}
 	// Return the dispose function
 	return unmockEndpoint.bind(null, endpoint, endpoint.loader);
 }
@@ -238,6 +245,11 @@ function unmockEndpoint(
 		/* istanbul ignore else */
 		if (previousLoader) {
 			endpoint.loader = previousLoader;
+		}
+		// Make sure that further access to the endpoint will not
+		// be a cached version of this mock
+		if ('cache' in endpoint && endpoint.cache) {
+			endpoint.cache.clear();
 		}
 	} else if (loaderFunction === undefined) {
 		// If no loaderFunction was given Erase all loaders
@@ -329,6 +341,12 @@ function isEndpointFunctionWithoutBody<TEndpoint extends Endpoint>(
 	return endpoint.method === 'GET' || endpoint.method === 'DELETE';
 }
 
+let mockLogging = true;
+/** Allow to disable logs */
+export const setRequestMockLogging = (isEnabled: boolean) => {
+	mockLogging = isEnabled;
+};
+
 function logRequest<TEndpoint extends Endpoint>(
 	endpoint: TEndpoint,
 	url: string,
@@ -336,6 +354,10 @@ function logRequest<TEndpoint extends Endpoint>(
 	result: Promise<EndpointResult<TEndpoint>>,
 	body?: EndpointBody<TEndpoint>
 ) {
+	// If logging is disabled skip this (e.g. during unit tests)
+	if (!mockLogging) {
+		return result;
+	}
 	// For nodejs skip the fake request
 	/* istanbul ignore else */
 	if (typeof fetch === 'undefined') {

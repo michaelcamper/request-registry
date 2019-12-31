@@ -1,6 +1,6 @@
 {
   "name": "request-registry-rxjs",
-  "version": "0.8.0",
+  "version": "0.11.0",
   "main": "dist/index.js",
   "umd:main": "dist/request-registry-rxjs.umd.production.js",
   "module": "dist/request-registry-rxjs.es.production.js",
@@ -25,19 +25,20 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "@types/jest": "24.0.13",
+    "@types/jest": "24.0.23",
     "pkg-ok": "2.3.1",
-    "request-registry": "^0.8.0",
-    "request-registry-mock": "^0.8.0",
+    "request-registry": "^0.11.0",
+    "request-registry-mock": "^0.11.0",
     "rxjs": "6.5.2",
-    "tsdx": "0.6.1",
-    "tslib": "1.9.3",
-    "typescript": "3.5.1"
+    "tsdx": "0.11.0",
+    "tslib": "1.10.0",
+    "typescript": "3.7.3"
   },
   "jest": {
     "coverageReporters": [
       "json",
       "html"
     ]
-  }
+  },
+  "gitHead": "de326679477033960958b037dfe8b26b3597f253"
 }

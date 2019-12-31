@@ -1,6 +1,6 @@
 {
   "name": "request-registry-react",
-  "version": "0.8.1",
+  "version": "0.11.0",
   "main": "dist/index.js",
   "umd:main": "dist/request-registry-react.umd.production.js",
   "module": "dist/request-registry-react.es.production.js",
@@ -19,18 +19,18 @@
     "request-registry": "*"
   },
   "devDependencies": {
-    "@testing-library/react": "8.0.1",
-    "@types/jest": "24.0.13",
-    "@types/react": "16.8.19",
-    "@types/react-dom": "16.8.4",
+    "@testing-library/react": "9.4.0",
+    "@types/jest": "24.0.23",
+    "@types/react": "16.9.16",
+    "@types/react-dom": "16.9.4",
     "pkg-ok": "2.3.1",
-    "react": "16.9.0-alpha.0",
-    "react-dom": "16.9.0-alpha.0",
-    "request-registry": "^0.8.0",
-    "request-registry-mock": "^0.8.0",
-    "tsdx": "0.6.1",
-    "tslib": "1.9.3",
-    "typescript": "3.5.1"
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "request-registry": "^0.11.0",
+    "request-registry-mock": "^0.11.0",
+    "tsdx": "0.11.0",
+    "tslib": "1.10.0",
+    "typescript": "3.7.3"
   },
   "jest": {
     "collectCoverage": true,
@@ -38,5 +38,6 @@
       "json",
       "html"
     ]
-  }
+  },
+  "gitHead": "de326679477033960958b037dfe8b26b3597f253"
 }

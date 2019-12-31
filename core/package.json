@@ -1,6 +1,6 @@
 {
   "name": "request-registry",
-  "version": "0.8.0",
+  "version": "0.11.0",
   "license": "MIT",
   "description": "Type safe promise based HTTP request registry for the browser",
   "bugs": "https://github.com/namics/request-registry/issues",
@@ -25,13 +25,13 @@
     "test": "tsdx test"
   },
   "devDependencies": {
-    "@types/fetch-mock": "7.3.0",
-    "@types/jest": "24.0.13",
-    "fetch-mock": "7.3.3",
+    "@types/fetch-mock": "7.3.2",
+    "@types/jest": "24.0.23",
+    "fetch-mock": "8.1.0",
     "node-fetch": "2.6.0",
     "pkg-ok": "2.3.1",
-    "tsdx": "0.6.1",
-    "typescript": "3.5.1"
+    "tsdx": "0.11.0",
+    "typescript": "3.7.3"
   },
   "config": {
     "commitizen": {
@@ -43,5 +43,6 @@
       "path": "dist/request-registry.cjs.production.js",
       "limit": "1.5 KB"
     }
-  ]
+  ],
+  "gitHead": "de326679477033960958b037dfe8b26b3597f253"
 }
